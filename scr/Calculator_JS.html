@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Calculatrice JavaScript</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+
+<div class="conteneur-calculatrice">
+
+    <div class="en-tete">
+        <div class="titre-calculatrice">Calculatrice</div>
+    </div>
+
+    <div class="zone-affichage">
+        <input id="result" type="text" class="ecran-principal" readonly>
+    </div>
+
+    <div class="grille-boutons">
+
+        <button class="bouton bouton-effacer-tout" onclick="clearResult()">C</button>
+
+        <button class="bouton bouton-nombre" onclick="appendValue('7')">7</button>
+        <button class="bouton bouton-nombre" onclick="appendValue('8')">8</button>
+        <button class="bouton bouton-nombre" onclick="appendValue('9')">9</button>
+        <button class="bouton bouton-operation" onclick="appendOperator('+')">+</button>
+
+        <button class="bouton bouton-nombre" onclick="appendValue('4')">4</button>
+        <button class="bouton bouton-nombre" onclick="appendValue('5')">5</button>
+        <button class="bouton bouton-nombre" onclick="appendValue('6')">6</button>
+        <button class="bouton bouton-operation" onclick="appendOperator('-')">-</button>
+
+        <button class="bouton bouton-nombre" onclick="appendValue('1')">1</button>
+        <button class="bouton bouton-nombre" onclick="appendValue('2')">2</button>
+        <button class="bouton bouton-nombre" onclick="appendValue('3')">3</button>
+        <button class="bouton bouton-operation" onclick="appendOperator('*')">*</button>
+
+        <button class="bouton bouton-nombre bouton-zero" onclick="appendValue('0')">0</button>
+        <button class="bouton bouton-nombre" onclick="appendValue('.')">.</button>
+
+        <button class="bouton bouton-egal" onclick="calculate()">=</button>
+        <button class="bouton bouton-operation" onclick="appendOperator('/')">/</button>
+
+    </div>
+
+</div>
+
+<script src="calculator.js"></script>
+</body>
+</html>
