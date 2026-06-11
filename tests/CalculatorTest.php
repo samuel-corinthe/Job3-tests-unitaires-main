@@ -14,26 +14,26 @@ class CalculatorTest extends TestCase
 
     public function testAddition(): void
     {
-        $result = $this->calculator->calculate('21+5');
-        $this->assertEquals(26, $result);
+        $result = $this->calculator->calculate('15+5');
+        $this->assertEquals(20, $result);
     }
 
     public function testSoustraction(): void
     {
-        $result = $this->calculator->calculate('10-5');
-        $this->assertEquals(5, $result);
+        $result = $this->calculator->calculate('11-5');
+        $this->assertEquals(6, $result);
     }
 
     public function testMultiplication(): void
     {
-        $result = $this->calculator->calculate('4*5');
-        $this->assertEquals(20, $result);
+        $result = $this->calculator->calculate('5*5');
+        $this->assertEquals(25, $result);
     }
 
     public function testDivision(): void
     {
-        $result = $this->calculator->calculate('16/2');
-        $this->assertEquals(8, $result);
+        $result = $this->calculator->calculate('18/2');
+        $this->assertEquals(9, $result);
     }
 
     public function testDivisionParZero(): void
