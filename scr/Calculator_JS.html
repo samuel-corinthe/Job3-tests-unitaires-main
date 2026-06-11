@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Calculatrice JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice — Édition Sam Luxury</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Poppins:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="calculator.css">
 </head>
 
 <body>
@@ -16,37 +16,48 @@
 
     <div class="en-tete">
         <div class="titre-calculatrice">Calculatrice</div>
+        <div class="sous-titre">édition Sam luxury</div>
+        <div class="separateur"></div>
     </div>
 
     <div class="zone-affichage">
-        <input id="result" type="text" class="ecran-principal" readonly>
+        <div class="affichage-historique" id="historique"></div>
+        <input id="result" type="text" class="ecran-principal" readonly value="0">
     </div>
 
     <div class="grille-boutons">
 
-        <button class="bouton bouton-effacer-tout" onclick="clearResult()">C</button>
+        <button class="bouton bouton-effacer-tout" onclick="clearResult()">effacer</button>
+        <button class="bouton bouton-effacer" onclick="backspace()">⌫</button>
+        <button class="bouton bouton-operation" style="background:#8a6a5a; box-shadow: 0 3px 10px rgba(138,106,90,0.2);" onclick="appendValue('%')">%</button>
+        <button class="bouton bouton-operation" onclick="appendOperator('/')">÷</button>
 
         <button class="bouton bouton-nombre" onclick="appendValue('7')">7</button>
         <button class="bouton bouton-nombre" onclick="appendValue('8')">8</button>
         <button class="bouton bouton-nombre" onclick="appendValue('9')">9</button>
-        <button class="bouton bouton-operation" onclick="appendOperator('+')">+</button>
+        <button class="bouton bouton-operation" onclick="appendOperator('*')">×</button>
 
         <button class="bouton bouton-nombre" onclick="appendValue('4')">4</button>
         <button class="bouton bouton-nombre" onclick="appendValue('5')">5</button>
         <button class="bouton bouton-nombre" onclick="appendValue('6')">6</button>
-        <button class="bouton bouton-operation" onclick="appendOperator('-')">-</button>
+        <button class="bouton bouton-operation" onclick="appendOperator('-')">−</button>
 
         <button class="bouton bouton-nombre" onclick="appendValue('1')">1</button>
         <button class="bouton bouton-nombre" onclick="appendValue('2')">2</button>
         <button class="bouton bouton-nombre" onclick="appendValue('3')">3</button>
-        <button class="bouton bouton-operation" onclick="appendOperator('*')">*</button>
+        <button class="bouton bouton-operation" onclick="appendOperator('+')">+</button>
 
         <button class="bouton bouton-nombre bouton-zero" onclick="appendValue('0')">0</button>
-        <button class="bouton bouton-nombre" onclick="appendValue('.')">.</button>
+        <button class="bouton bouton-nombre" onclick="appendValue('.')">·</button>
 
         <button class="bouton bouton-egal" onclick="calculate()">=</button>
-        <button class="bouton bouton-operation" onclick="appendOperator('/')">/</button>
 
+    </div>
+
+    <div class="ligne-bas">
+        <div class="point-deco"></div>
+        <div class="point-deco actif"></div>
+        <div class="point-deco"></div>
     </div>
 
 </div>
